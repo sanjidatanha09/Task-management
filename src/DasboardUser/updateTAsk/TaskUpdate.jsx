@@ -38,7 +38,7 @@ const TaskUpdate = () => {
         const email = user?.email;
 
         const updatedProduct = {
-            titles, description, deadline, typeoff, priority, email,
+            titles, description, deadline, typeoff, priority, email
 
 
         }
