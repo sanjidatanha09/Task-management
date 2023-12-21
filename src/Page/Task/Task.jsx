@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 
 const Task = () => {
     const PreviousTask = useLoaderData()
     console.log(PreviousTask);
+    useEffect(() => {
+        document.title = "Task";
+    }, [])
+
     return (
         <div>
             <div className='pb-10'>

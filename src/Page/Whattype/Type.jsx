@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Banner from '../../Home/Banner';
 import Footer from '../../Home/Footer';
 
 
 const Type = () => {
+    useEffect(() => {
+        document.title = "Developer";
+    }, [])
+
     
     return (
         <div>

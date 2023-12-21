@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import useAuth from '../../Hooks/UseAuth';
 import Select from 'react-select';
 import Swal from 'sweetalert2';
@@ -12,6 +12,9 @@ const options1 = [
 
 const NewTask = () => {
     const { user } = useAuth();
+    useEffect(() => {
+        document.title = "Dashboard || New Task";
+    }, [])
 
     const [selectedOption, setSelectedOption] = useState(null);
 
@@ -42,7 +45,7 @@ const NewTask = () => {
         console.log(newdata);
 
         //send data to the server 
-        fetch('http://localhost:5000/postnewtask', {
+        fetch('https://task-server-management.vercel.app/postnewtask', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

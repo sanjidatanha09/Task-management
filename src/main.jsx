@@ -34,12 +34,12 @@ const router = createBrowserRouter([
       {
         path: '/task',
         element:<Task></Task>,
-        loader: () => fetch('http://localhost:5000/newtaskget')
+        loader: () => fetch('https://task-server-management.vercel.app/newtaskget')
       },
       {
         path: '/project',
         element: <Project></Project>,
-        loader: () => fetch('http://localhost:5000/getproject')
+        loader: () => fetch('https://task-server-management.vercel.app/getproject')
       },
       {
         path: '/login',
@@ -80,7 +80,7 @@ const router = createBrowserRouter([
       {
         path: 'updateTask/:id',
         element: <TaskUpdate></TaskUpdate>,
-        loader: ({ params }) => fetch(`http://localhost:5000/taskupdate/${params.id}`)
+        loader: ({ params }) => fetch(`https://task-server-management.vercel.app/taskupdate/${params.id}`)
 
 
       },

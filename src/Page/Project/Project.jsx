@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 
 const Project = () => {
     const PreviousTask = useLoaderData()
     console.log(PreviousTask);
+
+    useEffect(() => {
+        document.title = "Project";
+    }, [])
+
+
     return (
         <div>
             <div className=''>

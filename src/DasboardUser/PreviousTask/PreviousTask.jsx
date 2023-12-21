@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import usePreviTask from '../../Hooks/usePreviTask';
 import Swal from 'sweetalert2';
@@ -9,6 +9,9 @@ import { Link } from 'react-router-dom';
 const PreviousTask = () => {
     const axiosSecure = useAxiosSecure();
     const [PreviousTask,refetch] = usePreviTask();
+    useEffect(() => {
+        document.title = "Dashboard || Previous Task";
+    }, [])
 
    
 

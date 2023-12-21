@@ -27,13 +27,11 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/'
 
     const navigate = useNavigate();
-
-
-
     useEffect(() => {
-        document.title = "Foodie | Login";
+        document.title = "Login";
     }, [])
-    
+
+
    
     const handleGoogle = () => {
         googleSignIn().then(result => {
@@ -44,12 +42,14 @@ const Login = () => {
                 name: result.user?.displayName
 
             }
+            navigate(from, { replace: true });
 
             axiosSecure.post('/users', userInfo)
                 .then(res => {
                     console.log(res.data);
-                    navigate(from, { replace: true });
+                    
                 })
+            
 
         });
     };
@@ -76,6 +76,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
+               
                 navigate(from, { replace: true });
 
 
@@ -94,27 +95,27 @@ const Login = () => {
                 </div>
 
                 <div className='lg:w-[50%]'>
-                    <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold pt-10 mb-8 text-center text-orange-600">Login Here</h1>
+                    <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold pt-10 mb-8 text-center text-[#4141e2]">Login Here</h1>
                     <div className='bg-slate-300 rounded-lg shadow-lg  h-[580px]'>
                         <form onSubmit={handleLogin} className='  card-body  ' >
 
 
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text font-bold text-xl md:text-3xl lg:text-3xl text-orange-600">Email</span>
+                                    <span className="label-text font-bold text-xl md:text-3xl lg:text-3xl text-[#4141e2]">Email</span>
                                 </label>
-                                <input type="email" placeholder="email" name="email" className="input input-bordered text-orange-700" required />
+                                <input type="email" placeholder="email" name="email" className="input input-bordered text-[#4141e2]" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text font-bold text-xl md:text-3xl lg:text-3xl text-orange-600">Password</span>
+                                    <span className="label-text font-bold text-xl md:text-3xl lg:text-3xl text-[#4141e2]">Password</span>
                                 </label>
                                 {/* toggle use */}
 
                                 <div className='relative'>
-                                    <input type={showpassword ? "text" : "password"} name='password' placeholder="password" className="input text-orange-700 input-bordered w-full" required />
+                                    <input type={showpassword ? "text" : "password"} name='password' placeholder="password" className="input text-[#4141e2] input-bordered w-full" required />
 
-                                    <span className='bottom-4 lg:bottom-[14px] right-4 absolute' onClick={() => setShowpassword(!showpassword)}>
+                                    <span className='bottom-4 lg:bottom-[14px] right-4 absolute text-[#4141e2]' onClick={() => setShowpassword(!showpassword)}>
                                         {
                                             showpassword ? <FaRegEyeSlash></FaRegEyeSlash> : <FaEye></FaEye>
                                         }
@@ -124,14 +125,14 @@ const Login = () => {
                                 </div>
 
                                 <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover font-bold text-orange-600">Forgot password?</a>
+                                    <a href="#" className="label-text-alt link link-hover font-bold text-[#7b7be6]">Forgot password?</a>
                                 </label>
 
                             </div>
 
 
                             <div className="form-control mt-6">
-                                <button className="btn btn-warning text-white md:w-[200px] lg:w-[200px] mx-auto md:text-xl lg:text-2xl font-extrabold ">Login</button>
+                                <button className="btn btn-primary text-white md:w-[200px] lg:w-[200px] mx-auto md:text-xl lg:text-2xl font-extrabold ">Login</button>
                             </div>
 
 
@@ -140,13 +141,13 @@ const Login = () => {
 
                         </form>
                         <div className='text-center mt-5'>
-                            <h2 className="text-lg mb-2 font-bold text-orange-600 ">or Login With</h2>
+                            <h2 className="text-lg mb-2 font-bold text-[#4141e2] ">or Login With</h2>
                             <div className='flex  gap-5 justify-center items-center py-4'>
-                                <button onClick={handleGoogle} className='btn md:text-xl lg:text-xl font-bold btn-warning text-white'>
+                                <button onClick={handleGoogle} className='btn md:text-xl lg:text-xl font-bold btn-primary text-white'>
                                     <FaGofore></FaGofore>Google
                                 </button>
                                 <br />
-                                <button className='btn md:text-xl lg:text-xl font-bold btn-warning text-white'>
+                                <button className='btn md:text-xl lg:text-xl font-bold btn-primary text-white'>
                                     <FaGithub></FaGithub>Github
                                 </button>
 
@@ -154,7 +155,7 @@ const Login = () => {
 
 
                         </div>
-                        <p className='font-bold mb-3 text-center text-orange-700'>Don't have an account? <Link className='text-orange-400 font-bold lg:text-xl' to="/registration">Register</Link> </p>
+                        <p className='font-bold mb-3 text-center text-[#6666e0]'>Don't have an account? <Link className='text-[#4141e2] font-bold lg:text-xl' to="/registration">Register</Link> </p>
                     </div>
 
                 </div>

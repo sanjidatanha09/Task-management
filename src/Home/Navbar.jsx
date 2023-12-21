@@ -19,11 +19,48 @@ const Navbar = () => {
 
     const navLinks = <>
         <li className="font-bold lg:text-base text-gray-600"> <NavLink to="/">Home</NavLink></li>
-        <li className="font-bold lg:text-base text-gray-600"> <NavLink to="/type">Developers</NavLink></li>
-        <li className="font-bold lg:text-base text-gray-600"> <NavLink to="/task">Task</NavLink></li>
-        <li className="font-bold lg:text-base text-gray-600"> <NavLink to="/project">Project</NavLink></li>
+     
+
         {
             user?.email ? <>
+                <li className="font-bold lg:text-base text-gray-600"> <NavLink to="/type">Developers</NavLink></li>
+
+
+            </>
+
+                :
+                <li></li>
+        }
+        
+
+        {
+            user?.email ? <>
+                <li className="font-bold lg:text-base text-gray-600"> <NavLink to="/task">Task</NavLink></li>
+
+
+            </>
+
+                :
+                <li></li>
+        }
+      
+
+        {
+            user?.email ? <>
+                <li className="font-bold lg:text-base text-gray-600"> <NavLink to="/project">Project</NavLink></li>
+
+
+            </>
+
+                :
+                <li></li>
+        }
+
+        
+       
+        {
+            user?.email ? <>
+            
                 <li className="font-bold lg:text-base text-gray-600"> <NavLink to="/dashboard">Dashboard</NavLink></li>
                
 
@@ -52,7 +89,7 @@ const Navbar = () => {
                             
                         </ul>
                     </div>
-                    <a className="text-xl font-bold text-gray-700">SCC Technovision Inc</a>
+                    <a className="text-xs md:text-xl lg:text-xl font-bold text-gray-700">SCC Technovision Inc</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -63,8 +100,19 @@ const Navbar = () => {
                     
                 </div>
                 <div className="navbar-end">
+                    <div className='text-center  flex justify-between gap-2  items-center pr-10'>
+                        <img className='hidden lg:inline lg:w-[35px] rounded-full' src={user?.photoURL} alt="" />
+                        <p className='hidden lg:inline text-lg font-bold text-[#4141e2]'>{user?.displayName}</p>
+
+
+
+
+                    </div>
+                    
                     {
                         user ?
+
+                            
                             <button onClick={handleSignOut} className='btn btn-primary text-white'>Log Out</button>
 
                             :

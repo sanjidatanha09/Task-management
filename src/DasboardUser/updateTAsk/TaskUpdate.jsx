@@ -29,7 +29,7 @@ const TaskUpdate = () => {
         console.log(updatedProduct);
 
         //send data to the server 
-        fetch(` http://localhost:5000/updatetasks/${update._id}`, {
+        fetch(` https://task-server-management.vercel.app/updatetasks/${update._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

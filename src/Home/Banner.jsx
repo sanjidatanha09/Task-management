@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Banner = () => {
@@ -13,8 +14,10 @@ const Banner = () => {
                             <p className='text-sm md:text-xl lg:text-2xl'>Indulge in our dishes and taste the freshness of locally sourced ingredients, carefully selected to enhance your dining experience.</p>
 
                             <div className='flex gap-4 mt-5 text-white'>
-                              
-                                <button className='btn btn-primary text-white  btn-outline text-xs  lg:text-xl'>Lets Explore</button>
+                                <Link to='/login'>
+
+                                    <button className='btn btn-primary text-white  btn-outline text-xs  lg:text-xl'>Lets Explore</button>
+                                </Link>
 
                             </div>
 
@@ -39,7 +42,10 @@ const Banner = () => {
 
                             <div className='flex gap-4 mt-5 text-white'>
                                
-                                <button className='btn btn-primary text-white  btn-outline text-xs  lg:text-xl'>Lets Explore</button>
+                               <Link to='/login'>
+
+                                    <button className='btn btn-primary text-white  btn-outline text-xs  lg:text-xl'>Lets Explore</button>
+                               </Link>
 
                             </div>
 

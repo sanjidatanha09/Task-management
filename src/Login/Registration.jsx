@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 import useAuth from '../Hooks/UseAuth';
 import useAxiosSecure from '../Hooks/useAxiosSecure';
 import { useForm } from 'react-hook-form';
+import usePreviTask from '../Hooks/usePreviTask';
 
 
 const Registration = () => {
@@ -17,6 +18,8 @@ const Registration = () => {
    
     const { createUser, updateUserProfile }= useAuth();
     const axiosSecure = useAxiosSecure()
+
+    
 
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
@@ -101,9 +104,9 @@ const Registration = () => {
 
     return (
         <div className='my-16 text-center'>
-            <h1 className="text-3xl lg:text-5xl font-bold mb-10 text-orange-600">Please Registration </h1>
+            <h1 className="text-3xl lg:text-5xl font-bold mb-10 text-[#4141e2]">Please Registration </h1>
             {
-                registererror && <p className=' text-black mb-5 text-xl font-semibold'>{registererror}</p>
+                registererror && <p className=' text-[#4141e2] mb-5 text-xl font-semibold'>{registererror}</p>
             }
     
             
@@ -112,37 +115,37 @@ const Registration = () => {
                 <form onSubmit={handleRegistration} className='  card-body ' >
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text font-bold lg:text-2xl text-orange-600">Name</span>
+                            <span className="label-text font-bold lg:text-2xl text-[#4141e2]">Name</span>
                         </label>
-                        <input type="text" placeholder="displayName" name="displayName" className="input input-bordered text-orange-800" required />
+                        <input type="text" placeholder="displayName" name="displayName" className="input input-bordered text-[#5757da]" required />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text font-bold lg:text-2xl text-orange-600">Photo URL</span>
+                            <span className="label-text font-bold lg:text-2xl text-[#4141e2]">Photo URL</span>
                         </label>
-                        <input type="text" placeholder="photo url" name="photoURL" className="input input-bordered text-orange-800" required />
+                        <input type="text" placeholder="photo url" name="photoURL" className="input input-bordered text-[#5757da]" required />
                     </div>
 
 
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text font-bold lg:text-2xl text-orange-600">Email</span>
+                            <span className="label-text font-bold lg:text-2xl text-[#4141e2]">Email</span>
                         </label>
-                        <input type="email" placeholder="email" name="email" className="input input-bordered text-orange-800" required />
+                        <input type="email" placeholder="email" name="email" className="input input-bordered text-[#5757da]" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text font-bold lg:text-2xl text-orange-600">Password</span>
+                            <span className="label-text font-bold lg:text-2xl text-[#4141e2]">Password</span>
                         </label>
                         <div className=' relative'>
                             <input
                                 type={showpassword ? "text" : "password"}
                                 name='password'
                                 placeholder="password"
-                                className="input text-orange-800 input-bordered w-full"
+                                className="input text-[#5757da] input-bordered w-full"
                                 required />
-                            <span className='bottom-4 lg:bottom-[14px] right-4 absolute' onClick={() => setShowpassword(!showpassword)}>
+                            <span className='bottom-4 lg:bottom-[14px] right-4 absolute text-[#5757da]' onClick={() => setShowpassword(!showpassword)}>
                                 {
                                     showpassword ? <FaRegEyeSlash></FaRegEyeSlash> : <FaEye></FaEye>
                                 }
@@ -154,7 +157,7 @@ const Registration = () => {
 
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-warning text-white md:text-xl  lg:text-2xl lg:w-[250px] mx-auto font-bold">Registar</button>
+                        <button className="btn btn-primary text-white md:text-xl  lg:text-2xl lg:w-[250px] mx-auto font-bold">Registar</button>
                     </div>
 
 
@@ -164,7 +167,7 @@ const Registration = () => {
                 </form>
 
                 
-                <p className='font-bold mb-3 text-orange-600'>Already have an account? <Link className='text-orange-400 font-bold text-2xl lg:text-2xl' to="/login">Login</Link> </p>
+                <p className='font-bold mb-3 text-[#6c6ce2]'>Already have an account? <Link className='text-[#3333d1] font-bold text-2xl lg:text-2xl' to="/login">Login</Link> </p>
            </div>
             <ToastContainer />
         </div>

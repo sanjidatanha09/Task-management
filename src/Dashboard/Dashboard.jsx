@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import useAuth from '../Hooks/UseAuth';
 
@@ -6,6 +6,11 @@ const Dashboard = () => {
 
 
     const { user, logOut } = useAuth();
+    useEffect(() => {
+        document.title = "Dashboard || User Home";
+    }, [])
+
+
     return (
         <div>
 
@@ -15,34 +20,7 @@ const Dashboard = () => {
                 <div className=' lg:w-64  min-h-full bg-[rgb(186,183,235)] '>
 
                     <ul className='menu text-center p-5  text-sm lg:font-bold lg:text-xl text-white'>
-                        {/* {
-                            isAdmin ? <>
-
-                                <li className=' rounded-xl mb-2  bg-[#2c1c08]'><NavLink to='/dashboard/adminhome'>Admin Home</NavLink></li>
-
-
-                                <li className=' rounded-xl mb-2  bg-[#2c1c08]'><NavLink to='/dashboard/manageuser'>Manage Users</NavLink></li>
-
-                                <li className=' p-2  rounded-xl mb-2  bg-[#2c1c08]'><NavLink to='/dashboard/approvedpremium'>Approved Premium</NavLink></li>
-
-                                <li className=' p-2  rounded-xl mb-2  bg-[#2c1c08]'><NavLink to='/dashboard/approvedcontactrequest'>Approved Contact Request</NavLink></li>
-
-                                <li
-                                    className=' p-2  rounded-xl mb-2  bg-[#2c1c08]'><NavLink to='/dashboard/story'>Success Story</NavLink></li>
-
-                                <li
-                                    className=' p-2  rounded-xl mb-2  bg-[#2c1c08]'><NavLink to='/'>LogOut</NavLink></li>
-
-
-                                <hr className='my-10 ' />
-
-                                <li className=' p-2  rounded-xl mb-2  bg-[#2c1c08]'><NavLink to='/'>Home</NavLink></li>
-
-                                <li className=' p-2  rounded-xl mb-2  bg-[#2c1c08]'><NavLink to='/biodata'>BioDatas</NavLink></li>
-
-
-                            </> : <> */}
-
+                      
 
                         <li className=' bg-[#8888eb]  mb-5 rounded-xl  '><NavLink to='/dashboard'>User Home</NavLink></li>
 
