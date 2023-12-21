@@ -1,8 +1,22 @@
-# React + Vite
+### 🧮 
+Certainly! A collaborative Task Management platform should offer a range of functionalities to enhance team productivity and communication. Here are some key features and functionalities :
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **1** : ` User Authentication and Authorization` 
+   - Allow users to register, login, and manage their profiles.
 
-Currently, two official plugins are available:
+- **2** : `Task Creation and Management`
+    - Users should be able to create, edit, and delete tasks.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **3** : `Dashboard and Analytics`
+    - Create a dashboard to give users an overview of their tasks, upcoming deadlines, and overall productivity.
+
+- **4** : `User Profile and Settings`
+    -Provide options to set preferences, such as default views, themes, and notification settings.
+
+- **5** : `Mobile Responsiveness`
+    - Ensure that the platform is fully responsive for a seamless experience on various devices, including mobile phones and tablets.
+
+
+# Brand-Shop
+
+## [ Client Side Live Link ](https://task-management-1f515.web.app/)
