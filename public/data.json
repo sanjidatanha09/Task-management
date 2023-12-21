@@ -1,0 +1,41 @@
+[
+    {
+        "Projext_id": "1",
+        "Project_title": "Resume Builder Web Application",
+        "Project_details": "The Resume Builder Web Application is a user-friendly platform designed to assist individuals in creating professional resumes effortlessly. Users can input their personal and professional details, and the application generates visually appealing and well-structured resumes tailored to industry standards. With a variety of templates and formatting options, the application allows for customization to suit individual preferences and career objectives. The platform also provides helpful tips and suggestions to guide users in crafting effective and compelling resumes. Overall, the Resume Builder Web Application streamlines the resume creation process, making it accessible to users of all experience levels.",
+        "Deadline": "12-01-24"
+        
+    },
+    {
+        "Projext_id": "2",
+        "Project_title": "Two truths and a lie game slack bot",
+        "Project_details": "The Two Truths and a Lie Slack bot is a fun and interactive tool designed to engage team members in a lighthearted guessing game. Users take turns submitting three statements about themselves – two truths and one lie. The bot then presents these statements anonymously to the team, prompting others to guess which statement is the falsehood. After all guesses are submitted, the bot reveals the correct answer, fostering team bonding and adding an element of surprise to remote or distributed work environments. This Slack bot encourages team members to learn more about each other in a playful manner, enhancing camaraderie and communication within the workplace.",
+        "Deadline": "13-02-24"
+    }
+    ,
+    {
+        "Projext_id": "3",
+        "Project_title": "Real-Time Video Processing using Chromakey ",
+        "Project_details": "Real-time video processing with chromakey involves the live removal and replacement of a specific color (usually green or blue) from a video feed, allowing for dynamic background substitution. This technique is commonly used in video production, streaming, and virtual events to create immersive and engaging visual experiences. Utilizing advanced algorithms, the chromakey technology accurately identifies and isolates the specified color, enabling seamless integration of live-action footage with virtual backgrounds or other visual elements. Real-time processing is crucial for applications such as live broadcasts and virtual meetings, where immediate interaction and feedback are essential. Overall, this approach enhances the visual appeal of video content by enabling dynamic background changes in real-time, creating captivating and professional-looking productions.",
+        "Deadline": "17-02-24"
+    }
+    ,
+    {
+        "Projext_id": "4",
+        "Project_title": "Weather Forecasting App",
+        "Project_details": "The Weather Forecasting App provides users with real-time and accurate weather information, delivering detailed forecasts for locations worldwide. Users can access current conditions, hourly forecasts, and extended outlooks, ensuring they stay informed about changing weather patterns. The app leverages advanced meteorological models to provide up-to-date data on temperature, precipitation, wind speed, and more. With a user-friendly interface, intuitive navigation, and customizable features, the app caters to a broad range of users, from casual observers to those with specific weather-related interests. Overall, the Weather Forecasting App enhances users' ability to plan and adapt to weather conditions, making it a valuable tool for daily life and travel.",
+        "Deadline": "05-02-24"
+    },
+    {
+        "Projext_id": "5",
+        "Project_title": "Email Alerts on WhatsApp",
+        "Project_details": "Enabling Email Alerts on WhatsApp involves setting up a system that sends notifications to a user's WhatsApp account based on incoming emails. Users can configure this feature to receive immediate alerts for important emails, providing a quick and convenient way to stay informed. Integration between email and WhatsApp is typically achieved through third-party services or custom scripts that monitor the email inbox and trigger WhatsApp notifications accordingly. This functionality proves valuable for users who prioritize timely communication and need instant updates on critical emails while on the go. Implementing Email Alerts on WhatsApp enhances communication efficiency by seamlessly combining two widely used communication channels.",
+        "Deadline": "11-02-24"
+    }
+    ,{
+        "Projext_id": "6",
+        "Project_title": "450 DSA Tracker website",
+        "Project_details": "It seems like you've mentioned 450 DSA Tracker but the context or specific details are not clear. If you are referring to a data structure and algorithms (DSA) tracker for a coding or interview preparation context, heres a brief description .The 450 DSA Tracker may refer to a resource or program designed to help individuals track their progress through a set of 450 commonly asked data structure and algorithm problems. This tracker could include features such as progress visualization, performance analytics, and a structured roadmap to guide users through the learning process. Users might utilize it to monitor their proficiency in solving various coding challenges and to stay organized in their DSA preparation journey. Such trackers are often valuable tools for those preparing for technical interviews or competitive programming, helping them systematically improve their problem-solving skills.",
+        "Deadline": "11-03-24"
+    }
+]

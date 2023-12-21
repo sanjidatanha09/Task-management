@@ -7,24 +7,24 @@ import { useState } from "react";
 
 
 const Navbar = () => {
-    const { user, logOUt } = useAuth();
+    const { user, logOut } = useAuth();
     
 
     const handleSignOut = () => {
-        logOUt()
+        logOut()
             .then()
             .catch()
 
     }
 
     const navLinks = <>
-        <li> <NavLink to="/">Home</NavLink></li>
-        <li> <NavLink to="/type">Developers</NavLink></li>
-        <li> <NavLink to="/task">Task</NavLink></li>
-        <li> <NavLink to="/project">Project</NavLink></li>
+        <li className="font-bold lg:text-base text-gray-600"> <NavLink to="/">Home</NavLink></li>
+        <li className="font-bold lg:text-base text-gray-600"> <NavLink to="/type">Developers</NavLink></li>
+        <li className="font-bold lg:text-base text-gray-600"> <NavLink to="/task">Task</NavLink></li>
+        <li className="font-bold lg:text-base text-gray-600"> <NavLink to="/project">Project</NavLink></li>
         {
             user?.email ? <>
-                <li> <NavLink to="/dashboard">Dashboard</NavLink></li>
+                <li className="font-bold lg:text-base text-gray-600"> <NavLink to="/dashboard">Dashboard</NavLink></li>
                
 
             </>
@@ -52,7 +52,7 @@ const Navbar = () => {
                             
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">SCC Technovision Inc</a>
+                    <a className="text-xl font-bold text-gray-700">SCC Technovision Inc</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -65,11 +65,11 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ?
-                            <button onClick={handleSignOut} className='btn btn-warning text-white'>Log Out</button>
+                            <button onClick={handleSignOut} className='btn btn-primary text-white'>Log Out</button>
 
                             :
                             <Link className='flex justify-center items-center gap-3' to="/login">
-                                <NavLink className='text-xl font-bold text-white btn btn-warning' to="/login">Login</NavLink>
+                                <NavLink className='text-xl font-medium text-white btn btn-primary' to="/login">Login</NavLink>
 
                             </Link>
 

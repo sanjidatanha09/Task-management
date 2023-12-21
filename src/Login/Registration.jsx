@@ -3,26 +3,31 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FaBeer, FaRegEyeSlash, FaEye } from 'react-icons/fa';
+import { FaRegEyeSlash, FaEye } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAuth from '../Hooks/UseAuth';
+import useAxiosSecure from '../Hooks/useAxiosSecure';
+import { useForm } from 'react-hook-form';
+
 
 const Registration = () => {
+    const {reset, formState: { errors } } = useForm();
     const [registererror, setRegistererror] = useState('');
     const [showpassword , setShowpassword] =useState(false);
    
-    const { createUser }= useAuth();
+    const { createUser, updateUserProfile }= useAuth();
+    const axiosSecure = useAxiosSecure()
 
     const location = useLocation();
-    console.log('location login page', location)
+    const from = location.state?.from?.pathname || '/'
 
     const navigate = useNavigate();
     useEffect(() => {
-        document.title = "Foodie | Registration";
+        document.title = "Registration";
     }, [])
 
 
-    const handleRegistration = e => {
+    const handleRegistration = (e) => {
         e.preventDefault();
         console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
@@ -56,38 +61,39 @@ const Registration = () => {
         //create user
         createUser(email, password)
             .then(result => {
-                console.log(result.user);
-                //new user has been created
-               
-                const createAt = result.user?.metadata?.creationTime;
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                updateUserProfile(displayName, photoURL)
+                    .then(() => {
+                        // creats user entry in the database
 
-                const user = { email, createAt: createAt};
-                navigate(location?.state ? location?.state : '/')
-                
-                fetch('https://assignment-11-server-smoky-mu.vercel.app/user', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(user)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.insertedId) {
-                            console.log('user added success');
+                        console.log('user profile update')
+                        reset();
+                    })
+                    .catch(error => console.log(error))
+
+                const userInfo = {
+                    name: displayName,
+                    email: email
+
+                }
+                axiosSecure.post('/users', userInfo)
+                    .then(res => {
+                        navigate(from, { replace: true });
+                        if (res.data.insertedId) {
+                            console.log('user added to the database')
+                            reset();
                             Swal.fire({
-                                title: 'Success!',
-                                text: 'user added successfully',
-                                icon: 'success',
-                                confirmButtonText: 'Cool'
-                            })
+                                title: "Good job!",
+                                text: "You clicked the button!",
+                                icon: "success"
+                            });
+
+                            navigate(from, { replace: true });
 
                         }
+
                     })
-            })
-            .catch(error => {
-                console.error(error)
-                toast(error.message);
 
             })
 
