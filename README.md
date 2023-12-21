@@ -17,6 +17,6 @@ Certainly! A collaborative Task Management platform should offer a range of func
     - Ensure that the platform is fully responsive for a seamless experience on various devices, including mobile phones and tablets.
 
 
-# Brand-Shop
+# Task Management
 
 ## [ Client Side Live Link ](https://task-management-1f515.web.app/)
