@@ -9,6 +9,12 @@ const options1 = [
     { value: 'High', label: 'High' },
 
 ];
+const options2 = [
+    { value: 'Developers', label: 'Developers' },
+    { value: 'Corporate professions', label: 'Corporate professions' },
+    { value: 'Bankers', label: 'Bankers' },
+
+];
 
 const NewTask = () => {
     const { user } = useAuth();
@@ -28,16 +34,18 @@ const NewTask = () => {
         const description = form.description.value;
         const deadline = form.deadline.value;
         const priority = form.priority.value;
-       
-    
+        const typeoff = form.typeoff.value;
+
+
+
 
         const email = user?.email;
-       
+
 
 
 
         const newdata = {
-           titles,description,deadline, priority,email
+            titles, description, deadline, priority, email, typeoff
 
             // addfee: parseInt(addfee)
         }
@@ -130,11 +138,11 @@ const NewTask = () => {
 
                     </div>
 
-                   
-                        <div className="form-control ">
-                            <label className="label">
-                                <span className="label-text text-[#4141e2] font-bold lg:text-xl">Priority</span>
-                            </label>
+
+                    <div className="form-control ">
+                        <label className="label">
+                            <span className="label-text text-[#4141e2] font-bold lg:text-xl">Priority</span>
+                        </label>
                         <Select className='text-sm text-[#8888eb]'
                             defaultValue={selectedOption}
                             onChange={setSelectedOption}
@@ -142,23 +150,36 @@ const NewTask = () => {
                             name="priority"
 
                         />
-                        </div>
+                    </div>
+                    <div className="form-control ">
+                        <label className="label">
+                            <span className="label-text text-[#4141e2] font-bold lg:text-xl">Type Off</span>
+                        </label>
+                        <Select className='text-sm text-[#8888eb]'
+                            defaultValue={selectedOption}
+                            onChange={setSelectedOption}
+                            options={options2}
+                            name="typeoff"
 
-         
+                        />
+                    </div>
 
 
-                   
 
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text text-[#4141e2] font-bold lg:text-xl">Donator Email</span>
-                            </label>
-                            <label className="input-group">
 
-                                <input type="email" disabled defaultValue={user?.email} name="email" placeholder="donator email" className="input input-bordered w-full text-[#8888eb]" />
-                            </label>
-                        </div>
-           
+
+
+
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text text-[#4141e2] font-bold lg:text-xl">Donator Email</span>
+                        </label>
+                        <label className="input-group">
+
+                            <input type="email" disabled defaultValue={user?.email} name="email" placeholder="donator email" className="input input-bordered w-full text-[#8888eb]" />
+                        </label>
+                    </div>
+
 
                     <div className='pt-10'>
                         <button className="btn btn-primary text-white lg:text-2xl ">Add Task</button>

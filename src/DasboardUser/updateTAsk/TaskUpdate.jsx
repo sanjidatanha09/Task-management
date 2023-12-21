@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import useAuth from '../../Hooks/UseAuth';
 import Swal from 'sweetalert2';
+import Select from 'react-select';
+
+
+const options1 = [
+    { value: 'Low', label: 'Low' },
+    { value: 'Moderate', label: 'Moderate' },
+    { value: 'High', label: 'High' },
+
+];
+const options2 = [
+    { value: 'Developers', label: 'Developers' },
+    { value: 'Corporate professions', label: 'Corporate professions' },
+    { value: 'Bankers', label: 'Bankers' },
+
+];
 
 const TaskUpdate = () => {
+    const [selectedOption, setSelectedOption] = useState(null);
     const update = useLoaderData();
-   
+
 
     const { user } = useAuth();
 
@@ -17,13 +33,14 @@ const TaskUpdate = () => {
         const description = form.description.value;
         const deadline = form.deadline.value;
         const priority = form.priority.value;
+        const typeoff = form.typeoff.value;
 
         const email = user?.email;
 
         const updatedProduct = {
-            titles, description, deadline, priority, email
+            titles, description, deadline, typeoff, priority, email,
 
-            
+
         }
 
         console.log(updatedProduct);
@@ -118,12 +135,25 @@ const TaskUpdate = () => {
                             <label className="label">
                                 <span className="label-text text-[#4141e2] font-bold lg:text-xl">Priority</span>
                             </label>
-                            <label className="input-group">
+                            <Select className='text-sm text-[#8888eb]'
+                                defaultValue={update.priority}
+                                onChange={setSelectedOption}
+                                options={options1}
+                                name="priority"
 
-
-                                <input defaultValue={update.priority} type="text" name="priority" placeholder="Priority " className="input input-bordered w-full text-[#8888eb] font-bold lg:text-xl" />
+                            />
+                        </div>
+                        <div className="form-control ">
+                            <label className="label">
+                                <span className="label-text text-[#4141e2] font-bold lg:text-xl">Type Off</span>
                             </label>
-                           
+                            <Select className='text-sm text-[#8888eb]'
+                                defaultValue={selectedOption}
+                                onChange={setSelectedOption}
+                                options={options2}
+                                name="typeoff"
+
+                            />
                         </div>
 
 
@@ -161,7 +191,7 @@ const TaskUpdate = () => {
 
                 </div>
             </div>
-            
+
         </div>
     );
 };
