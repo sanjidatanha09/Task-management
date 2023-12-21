@@ -19,6 +19,7 @@ import Project from './Page/Project/Project';
 import PreviousTask from './DasboardUser/PreviousTask/PreviousTask';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import TaskUpdate from './DasboardUser/updateTAsk/TaskUpdate';
+import UserHome from './DasboardUser/UserHome';
 
 const queryClient = new QueryClient();
 
@@ -65,6 +66,12 @@ const router = createBrowserRouter([
     element: <Dashboard></Dashboard>,
     // errorElement: <Error></Error>,
     children: [
+      {
+        path: 'dashboard',
+        element: <UserHome></UserHome>,
+
+      },
+      
       {
         path: 'newtask',
         element: <NewTask></NewTask>,

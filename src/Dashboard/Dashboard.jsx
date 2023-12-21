@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import useAuth from '../Hooks/UseAuth';
+import UserHome from '../DasboardUser/UserHome';
+import AllList from '../DasboardUser/AllList';
 
 const Dashboard = () => {
 
 
     const { user, logOut } = useAuth();
     useEffect(() => {
-        document.title = "Dashboard || User Home";
+        document.title = "Dashboard ";
     }, [])
 
 
@@ -22,7 +24,7 @@ const Dashboard = () => {
                     <ul className='menu text-center p-5  text-sm lg:font-bold lg:text-xl text-white'>
                       
 
-                        <li className=' bg-[#8888eb]  mb-5 rounded-xl  '><NavLink to='/dashboard'>User Home</NavLink></li>
+                        <li className=' bg-[#8888eb]  mb-5 rounded-xl  '><NavLink to='/dashboard/dashboard'>Dashboard</NavLink></li>
 
                         <li className='bg-[#8888eb] mb-5 rounded-xl   '><NavLink to='/dashboard/newtask'>New Task</NavLink></li>
 
@@ -52,6 +54,7 @@ const Dashboard = () => {
 
                 <div className='flex-1'>
                     <Outlet></Outlet>
+                   
                     
                 </div>
             </div>
