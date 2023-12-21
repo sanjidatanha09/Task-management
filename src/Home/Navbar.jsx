@@ -23,7 +23,7 @@ const Navbar = () => {
 
         {
             user?.email ? <>
-                <li className="font-bold lg:text-base text-gray-600"> <NavLink to="/type">Developers</NavLink></li>
+                <li className="font-bold lg:text-base text-gray-600"> <NavLink to="/type">Type</NavLink></li>
 
 
             </>
